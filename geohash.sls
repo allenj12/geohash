@@ -39,7 +39,7 @@
 
 (: ldexp 2 swap expt *)
 
-(: errorwithbit dup 2 / tuck ((180.0 swap -1 * ldexp) 1u1) 2u2 360.0 rot - -1 * ldexp)
+(: errorwithbit dup 2 / tuck ((180.0 swap -1 * ldexp) 1u1) 2u2 360.0 rrot - -1 * ldexp)
 
 (: center + 2 / (+ 2 /) 2u1)
 
