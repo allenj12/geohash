@@ -51,9 +51,9 @@
   (lambda (hash bits)
     (let-values ([(lat-delta lng-delta lat lng) 
                   (rpnv hash bits bbox
-                        4dup center 6rot 6rot
-                        swap - 5rot
-                        swap - 4rot)])
+                        4dup center 
+                        ((swap -) 2u1) 3u2 
+                        (((swap -) 2u1) 3u2) 4u3)])
            (rpn hash
                 lat lat-delta + lng             bits encode-int-prec
                 lat lat-delta + lng lng-delta + bits encode-int-prec
