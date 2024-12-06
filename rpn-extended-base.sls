@@ -154,7 +154,7 @@
 (: 1u1 {3 2} swap to-bot {2 ev} to-top)
 (: 1u2 {3 3} swap to-bot {2 2 ev} to-top)
 (: 1u3 {3 4} swap to-bot {2 3 ev} to-top)
-(: 1u4 {3 3} swap to-bot {2 4 ev} to-top)
+(: 1u4 {3 5} swap to-bot {2 4 ev} to-top)
 
 (: 2u1 {4 2} swap to-bot {3 ev} to-top)
 (: 2u2 {4 3} swap to-bot {3 2 ev} to-top)
