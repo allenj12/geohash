@@ -39,11 +39,11 @@
 
 (: ldexp 2 swap expt *)
 
-(: errorwithbit dup / 2 tuck ((180.0 swap -1 * ldexp) 1u1) 2u2 360.0 rot - -1 * ldexp)
+(: errorwithbit dup 2 / tuck ((180.0 swap -1 * ldexp) 1u1) 2u2 360.0 rot - -1 * ldexp)
 
 (: center + 2 / (+ 2 /) 2u1)
 
-(: bbox (64 swap - {2 ash} decode) 2k2 errorwithbit rot (+) 2k1 swap ((swap (+) 2k1 swap) 2u2) 3u3)
+(: bbox (64 swap - {2 ash} decode) 2k2 errorwithbit rot tuck + ((over +) 2u2) 3u3)
 
 (: bin-hash encode-int-prec {1 exact->inexact} {1 exact} 2 {2 number->string})
 
@@ -51,9 +51,9 @@
   (lambda (hash bits)
     (let-values ([(lat-delta lng-delta lat lng) 
                   (rpnv hash bits bbox
-                        4dup center 6rrot 6rrot
-                        swap - 5rrot
-                        swap - 4rrot)])
+                        4dup center 6rot 6rot
+                        swap - 5rot
+                        swap - 4rot)])
            (rpn hash
                 lat lat-delta + lng             bits encode-int-prec
                 lat lat-delta + lng lng-delta + bits encode-int-prec
