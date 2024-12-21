@@ -1,14 +1,14 @@
 #!chezscheme
-(library (geohash)
+(library (geohash geohash)
   (export encode-int-prec
           neighbors
           decode
           bin-hash
           shift-right)
   (import (chezscheme) 
-          (rpn)
-          (rpn-extended-base)
-          (rpn-iter))
+          (rpn rpn)
+          (rpn extended-base)
+          (rpn iter))
 
 (: shift-right (2 / {1 floor}) swap repeat1)
 
