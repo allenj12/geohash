@@ -30,7 +30,7 @@
 
 (: decode-range (swap {1 fixnum->flonum} 2 32 expt / 2 {3 *}) 2k1 -)
 
-(: encode-int-prec ((90 encode-range) 1u1 180 encode-range interleave) 2u1 64 - {2 ash})
+(: encode ((90 encode-range) 1u1 180 encode-range interleave) 2u1 64 - {2 ash})
 
 (: decode 64 swap - {2 ash} deinterleave (90 decode-range) 1u1 180 decode-range)
 
@@ -42,7 +42,7 @@
 
 (: bbox (decode) 2k2 errorwithbit rot tuck + (over +) 2uu2)
 
-(: bin-hash encode-int-prec {1 exact->inexact} {1 exact} 2 {2 number->string})
+(: bin-hash encode {1 exact->inexact} {1 exact} 2 {2 number->string})
 
 (: neighbors 
   {2 (lambda (hash bits)
@@ -52,12 +52,12 @@
                           (swap -) 2uu1
                           (swap -) 2uuu1)])
             (rpn hash
-                  lat lat-delta + lng             bits encode-int-prec
-                  lat lat-delta + lng lng-delta + bits encode-int-prec
-                  lat             lng lng-delta + bits encode-int-prec
-                  lat lat-delta - lng lng-delta + bits encode-int-prec
-                  lat lat-delta - lng             bits encode-int-prec
-                  lat lat-delta - lng lng-delta - bits encode-int-prec
-                  lat             lng lng-delta - bits encode-int-prec
-                  lat lat-delta + lng lng-delta - bits encode-int-prec
+                  lat lat-delta + lng             bits encode
+                  lat lat-delta + lng lng-delta + bits encode
+                  lat             lng lng-delta + bits encode
+                  lat lat-delta - lng lng-delta + bits encode
+                  lat lat-delta - lng             bits encode
+                  lat lat-delta - lng lng-delta - bits encode
+                  lat             lng lng-delta - bits encode
+                  lat lat-delta + lng lng-delta - bits encode
                   {9 list})))}))
