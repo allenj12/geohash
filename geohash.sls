@@ -1,6 +1,6 @@
 #!chezscheme
 (library (geohash geohash)
-  (export encode-int-prec
+  (export encode
           neighbors
           decode
           bin-hash)
@@ -32,7 +32,7 @@
 
 (: encode-int-prec ((90 encode-range) 1u1 180 encode-range interleave) 2u1 64 - {2 ash})
 
-(: decode deinterleave (90 decode-range) 1u1 180 decode-range)
+(: decode 64 swap - {2 ash} deinterleave (90 decode-range) 1u1 180 decode-range)
 
 (: ldexp 2 swap expt *)
 
@@ -40,7 +40,7 @@
 
 (: center + 2 / (+ 2 /) 2u1)
 
-(: bbox (64 swap - {2 ash} decode) 2k2 errorwithbit rot tuck + (over +) 2uu2)
+(: bbox (decode) 2k2 errorwithbit rot tuck + (over +) 2uu2)
 
 (: bin-hash encode-int-prec {1 exact->inexact} {1 exact} 2 {2 number->string})
 
