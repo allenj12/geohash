@@ -47,8 +47,7 @@
 (: neighbors 
   {2 (lambda (hash bits)
       (let-values ([(lat-delta lng-delta lat lng) 
-                    (rpnv hash bits bbox
-                          4dup center 
+                    (rpnv hash bits bbox 4dup center
                           (swap -) 2uu1
                           (swap -) 2uuu1)])
             (rpn hash
