@@ -17,10 +17,10 @@
           -16 {2 ash} {2 logor} #x00000000ffffffff {2 logand})
 
 (: spread dup 16 {2 ash} {2 logor} #x0000ffff0000ffff {2 logand} dup
-          8 {2 ash} {2 logor} #x00ff00ff00ff00ff {2 logand} dup
-          4 {2 ash} {2 logor} #x0f0f0f0f0f0f0f0f {2 logand} dup
-          2 {2 ash} {2 logor} #x3333333333333333 {2 logand} dup
-          1 {2 ash} {2 logor} #x5555555555555555 {2 logand})
+              8 {2 ash} {2 logor} #x00ff00ff00ff00ff {2 logand} dup
+              4 {2 ash} {2 logor} #x0f0f0f0f0f0f0f0f {2 logand} dup
+              2 {2 ash} {2 logor} #x3333333333333333 {2 logand} dup
+              1 {2 ash} {2 logor} #x5555555555555555 {2 logand})
 
 (: interleave (spread) 1u1 spread 1 {2 ash} {2 logor})
 
